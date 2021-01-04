@@ -17,13 +17,14 @@ link1.appendChild(link1img);
 link1.style = "width:70px;height:50px;padding:0";
 topbar.appendChild(link1);
 var navList = [["Home","index.html"],["About Us","about.html"],["Projects","projects.html"],["Products","products.html"]];
-navList.forEach(function(item,index){
+navList.forEach(function(item){
     var link = document.createElement("a");
     link.classList.add("navbutton");
     link.href = item[1];
     link.innerHTML = item[0];
     topbar.appendChild(link);
-    if (link.href === window.location.href || window.location.pathname === "/"){link.classList.add("currentPage")}
+    if (link.href === window.location.href){link.classList.add("currentPage")}
+    else if (item[0] == "Home" && window.location.pathname == "/"){link.classList.add("currentPage")}
 })
 // Footer
 var footer = document.getElementById("footer");
