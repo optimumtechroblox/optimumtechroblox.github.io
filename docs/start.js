@@ -16,7 +16,7 @@ link1img.src = icon;
 link1.appendChild(link1img);
 link1.style = "width:70px;height:50px;padding:0";
 topbar.appendChild(link1);
-var navList = [["Home","home.html"],["Operators","operators.html"],["Routes","routes.html"],["Fleet","fleet.html"]];
+var navList = [["Home","index.html"],["About Us","about.html"],["Projects","projects.html"],["Products","products.html"]];
 navList.forEach(function(item,index){
     var link = document.createElement("a");
     link.classList.add("navbutton");
@@ -28,11 +28,9 @@ navList.forEach(function(item,index){
 // Footer
 var footer = document.getElementById("footer");
 var img1 = document.createElement("img");img1.id = "footerimg1";
-var img2 = document.createElement("img");img2.id = "footerimg2";
 footer.appendChild(img1);img1.src = "https://www.hkbrda.org/infolink/output/news-big.gif";
-footer.appendChild(img2);img2.src = "https://www.coronavirus.gov.hk/images/fight-virus-1000x250.png";
 var p1 = document.createElement("p");footer.appendChild(p1);p1.style = "position:absolute;padding:0;left:20px;width:300px"
-p1.innerHTML = 'Transport Simulator 2021<br>All rights reserved<br><span style="color:grey;font-size:12px">Last updated on 25 Nov 2020</span>'
+p1.innerHTML = 'Optimum Tech Roblox 2021<br>All rights reserved<br><span style="color:grey;font-size:12px">Last updated on 4 Jan 2021</span>'
 
 var content = document.getElementById("content");
 function posfooter(){var num = window.innerHeight - 310 + "px";content.style.minHeight = num}
