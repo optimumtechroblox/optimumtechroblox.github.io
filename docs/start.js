@@ -23,7 +23,7 @@ navList.forEach(function(item,index){
     link.href = item[1];
     link.innerHTML = item[0];
     topbar.appendChild(link);
-    if (link.href === window.location.href){link.classList.add("currentPage")}
+    if (link.href === window.location.href || window.location.pathname === "/"){link.classList.add("currentPage")}
 })
 // Footer
 var footer = document.getElementById("footer");
