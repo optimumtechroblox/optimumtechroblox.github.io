@@ -16,7 +16,7 @@ link1img.src = icon;
 link1.appendChild(link1img);
 link1.style = "width:70px;height:50px;padding:0";
 topbar.appendChild(link1);
-var navList = [["Home","home.html"],["Operators","operators.html"],["Routes","routes.html"],["Fleet","fleet.html"]];
+var navList = [["Home","index.html"],["Operators","operators.html"],["Routes","routes.html"],["Fleet","fleet.html"]];
 navList.forEach(function(item,index){
     var link = document.createElement("a");
     link.classList.add("navbutton");
