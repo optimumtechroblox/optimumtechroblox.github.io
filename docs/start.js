@@ -33,7 +33,7 @@ var footer = document.getElementById("footer");
 var img1 = document.createElement("img");img1.id = "footerimg1";
 footer.appendChild(img1);img1.src = "https://www.hkbrda.org/infolink/output/news-big.gif";
 var p1 = document.createElement("p");footer.appendChild(p1);p1.style = "position:absolute;padding:0;left:20px;width:300px"
-p1.innerHTML = 'Optimum Tech Roblox 2021<br>All rights reserved<br><span style="color:grey;font-size:12px">Last updated on 4 Jan 2021</span>'
+p1.innerHTML = 'Optimum Tech Roblox 2021<br>All rights reserved<br><span style="color:grey;font-size:12px">Last updated on 14 Jan 2021</span>'
 
 var content = document.getElementById("content");
 function posfooter(){var num = window.innerHeight - 310 + "px";content.style.minHeight = num}
