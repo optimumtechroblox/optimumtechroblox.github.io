@@ -2,12 +2,93 @@
 <html>
 <head>
 <title>Our Product List</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+.dotted{text-decoration:dotted solid black 1px;color:#009ac8}
+.dotted:hover{background-color:#009ac8;color:white}
+#productlist{width:100%}
+.title{width:100%;padding:5px 0px;font-size:22px;cursor:pointer;color:black;transition-duration:400ms;border-radius:10px}
+.title:hover{background-color:#aaa}
+.opentitle{color:white;background-color:#010733;border-radius:0}
+.opentitle:hover{background-color:#009ac8;border-radius:10px}
+
+.desc{background-color:#ddd;display:none}
+.opened{display:block}
+
+@media (max-width:600px){
+    .title{padding:4px 0px;font-size:18px}
+    .desc{background-color:#ddd;font-size:14px}
+}
+</style>
 </head>
 <body>
-    <div id='content'>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQq4ubFJ8m7po8hHRlHyBdL7wW95FJZtU1jHNJWbQY40otZidx3ddXzP7h_g2qSIZUucysia_9YzKwb/pubhtml?widget=true&amp;headers=false"></iframe>
-    </div>
-    <div id='footer'></div>
-    <script src="start.js"></script> 
+<div id="content">
+<h1>Our products</h1>
+<div id="productlist"></div>
+<p style="color:red">Please contact to a Product Manager before purchasing the items marked with a red asterisk (*).</p>
+</div>
+<div id='footer'></div>
+<script src="start.js"></script>
+<script>
+var list = [
+    ["001","Import FM Plugin","Free",'This product is free! Click <a class="dotted" target="_blank" href="https://www.roblox.com/library/5765669691">here</a> (opens a new window) for more information and how to get it.'],
+    ["002","LCD Style Stop Reporter Addon","R$250",'Addon for DPIP,adds a LCD Stopreporter'],
+    ["003","ScreenGui Change Dest Addon","R$200",'Addon for Destination Display System,Makes a ScreenGui pops Up for people to choose routes with GUI buttons'],
+    ["004","A-Chassis Mobile Support<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$700",'Please contact product manager before puchasing to check if the script is for your A-Chassis Version'],
+    ["005","Random Fleet Number","R$120",'Generates a random fleet number for your bus from a module that contains custom fleet numbers'],
+    ["006","In-game Currency System","R$50",'This item creates a leaderboard. Recommended to purchase for games with in-game currency'],
+    ["007","Played Time Leaderboard","R$200","This item helps you to calculate and display a player's overall played time in your game."],
+    ["008","Animated Doors","R$250",'This item can give you animated doors instead of the ABCDE method. TweenService is used<br>Note: Remember to anchor the door or it may fall out!<br>Additional installation fee is required for welding to movable objects.'],
+    ["009","Wipers<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$200","This is a service that helps your static wipers to be movable!<br>After purchasing, please contact to Product Manager and provide the required models."],
+    ["010","Interior Lights System","R$50","This is a small tool that enables players to toggle the lights in specific occasions!"],
+    ["011","Destination Display System","R$150","This scripts allows players to control the destination displays at the front, side and back. Currently there are 4 options for you to choose from:<br>1. TextLabel<br>2. Decal<br>3. TextLabel (1 language)<br>4. TextLabel (2 languages)"],
+    ["012","DPIP (Recommended to purchase with the item above)","R$600","DPIP KMB version with customizable module"],
+    ["013","Headlights & Blinkers System","R$50","This is a small tool that enables players to toggle headlights and blinkers."],
+    ["014","Custom Command Teleport Gui <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$300","Adds a custom command that opens up a teleport gui that teleports player in game"],
+    ["015","Custom Loading Screen","R$75","Custom Loading Screen"],
+    ["016","Main Menu GUI","R$75","Main Menu GUI"],
+    ["017","Spawn GUI","R$100","This script lets players to spawn in different places in-game.<br>We recommend to purchase this with Main Menu GUI."],
+    ["018","Custom Gauge <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$600","Custom driving gauge for A-Chassis. Fully customizable. Additional features are available with purchase. Contact Product Managaer for more info."],
+    ["019","Lights Plan","R$100","Interior Lights, Blinkers, Headlights and Rear Lights"],
+    ["020","GUI Plan","R$250","Custom Loading Screen + Menu Gui + Spawn Gui"],
+    ["021","Basic Bus Scripts Plan","R$350","Lights + Animated Doors"],
+    ["022","Display Plan","R$900","Dest display + DPIP + LCD Stopreporter + customisable module"],
+    ["023","Advanced Bus Equipment Plan","R$1250","Lights + Animated Doors + Dest Display + DPIP + LCD Stopreporter"],
+    ["024","Miscellaneous Pack","R$1420","Animated Doors + Interior Lights + Dest Display + DPIP + Headlights & Blinkers + Custom Command Teleport Gui"],
+    ["025","A-Chassis Keybind System Installing","R$200","Installs item along with keybind(if possible),only needs to pay 200 once,does not apply to plans that includes keybind,see website for more information."],
+    ["026","Models and Scripts Installation","20% of required item","Installs the scripts and models to your game.Item refers to the item/plan that requires installing,pay this instead of keybind installing if your plan includes keybind."],
+    ["027","UI Linking Service <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","40% of required item","Please refer to our website for more info."],
+    ["028","Linking Discord webhook with Roblox game<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","Varies","Send message to Discord using webhook,price determines on what kind of webhook it is,includes intalling,contact product manager before purchasing"],
+    ["029","Custom Command<span style='color:red'>*</span>","Varies","Makes custom command(like spawn bus command),price determines on function of the command.<br>Contact Product Manager before purchasing."],
+    ["030","Custom Destination Display System<span style='color:red'>*</span>","Varies","This is a upgraded version of the Destination Display product, in which you may use other sources for rendering.<br>Please contact to Product Manager for more information."],
+    ["031","Custom Scripts<span style='color:red'>*</span>","Varies","Struggling that non of the above fits you game? Don't worry! We are always here to help you. You can always contact us for more information.<br>Note: Please only ask us for Lua scripts. Don't ask for Python, C+ or anything else."],
+];
+
+var frame = document.getElementById("productlist")
+list.forEach(function(value,index){
+    var title = document.createElement("div");
+    title.id = "item" + index;
+    title.classList.add("title");
+    title.innerHTML = '&nbsp;<i id="item' + value[0] + 'icon" class="material-icons" style="font-size:25px;position:relative;top:5px">expand_more</i>&nbsp;' + value[1];
+    title.innerHTML = title.innerHTML + "<span style='float:right'>Code: <span style='font-family:monospace'>" + value[0] + "&nbsp;&nbsp;</span></span>";
+    frame.appendChild(title);
+    var desc = document.createElement("div");
+    desc.id = "desc" + index;
+    desc.classList.add("desc");
+    desc.innerHTML = "Price: " + value[2] + "<br><br>" + value[3] + "<br>&nbsp;";
+    frame.appendChild(desc);
+    title.addEventListener("click",function(){
+        var icon = document.getElementById("item"+ index +"icon");
+        if (desc.classList.contains("opened")){
+            title.classList.remove("opentitle");
+            desc.classList.remove("opened");
+            icon.innerHTML = "expand_more";}
+        else {
+            title.classList.add("opentitle");
+            desc.classList.add("opened");
+            icon.innerHTML = "expand_less";}
+    });
+})
+</script>
 </body>
 </html>

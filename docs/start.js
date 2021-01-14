@@ -1,3 +1,5 @@
+// Directed to mobile site
+if (window.innerWidth <= 600){window.location.href = "m" + window.location.pathname}
 // Website icon
 var icon = "Logo.svg"
 var link = document.createElement("link");link.rel = "shortcut icon";document.head.appendChild(link);link.href = icon;
@@ -14,7 +16,7 @@ var link1img = document.createElement("img");
 link1img.id = "navicon";
 link1img.src = icon;
 link1.appendChild(link1img);
-link1.style = "width:70px;height:50px;padding:0";
+link1.style = "width:60px;height:100%;padding:0";
 topbar.appendChild(link1);
 var navList = [["Home","home.html"],["About Us","about.html"],["Projects","projects.html"],["Products","products.html"]];
 navList.forEach(function(item){
