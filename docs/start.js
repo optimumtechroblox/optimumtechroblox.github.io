@@ -2,7 +2,7 @@
 if (window.innerWidth <= 600){window.location.href = "m" + window.location.pathname}
 // Website icon
 var host = window.location.hostname
-if (host = "optimumtechroblox.github.io"){host = "C:/Users/wangh/Documents/GitHub/optimumtechroblox.github.io/docs"}
+if (host != "optimumtechroblox.github.io"){host = "C:/Users/wangh/Documents/GitHub/optimumtechroblox.github.io/docs"}
 var icon = host + "/logo.svg"
 var link = document.createElement("link");link.rel = "shortcut icon";document.head.appendChild(link);link.href = icon;
 var font = document.createElement("link");font.rel = "stylesheet";document.head.appendChild(font);font.href = "https://fonts.googleapis.com/css?family=Rubik";
