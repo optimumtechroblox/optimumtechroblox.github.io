@@ -1,7 +1,7 @@
 // Directed to mobile site
 if (window.innerWidth <= 600){window.location.href = "m" + window.location.pathname}
 // Website icon
-var host = "optimumtechroblox.github.io/"
+var host = "https://optimumtechroblox.github.io/"
 var icon = host + "logo.svg"
 var link = document.createElement("link");link.rel = "shortcut icon";document.head.appendChild(link);link.href = icon;
 var font = document.createElement("link");font.rel = "stylesheet";document.head.appendChild(font);font.href = "https://fonts.googleapis.com/css?family=Rubik";
