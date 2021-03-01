@@ -1,12 +1,11 @@
 // Directed to mobile site
 if (window.innerWidth <= 600){window.location.href = "m" + window.location.pathname}
 // Website icon
-var host = window.location.hostname
-if (host != "optimumtechroblox.github.io"){host = "C:/Users/wangh/Documents/GitHub/optimumtechroblox.github.io/docs"}
-var icon = host + "/logo.svg"
+var host = "optimumtechroblox.github.io/"
+var icon = host + "logo.svg"
 var link = document.createElement("link");link.rel = "shortcut icon";document.head.appendChild(link);link.href = icon;
 var font = document.createElement("link");font.rel = "stylesheet";document.head.appendChild(font);font.href = "https://fonts.googleapis.com/css?family=Rubik";
-var style = document.createElement("link");style.rel = "stylesheet";document.head.appendChild(style);style.href = host + "/style.css";
+var style = document.createElement("link");style.rel = "stylesheet";document.head.appendChild(style);style.href = host + "style.css";
 var meta = document.createElement("meta");meta.name = "viewport";document.head.appendChild(meta);meta.content = "width=device-width, initial-scale=1.0";
 // Top navbar
 var topbar = document.createElement("div");
@@ -25,7 +24,7 @@ var navList = [["Home","home.html"],["About Us","about.html"],["Projects","proje
 navList.forEach(function(item){
     var link = document.createElement("a");
     link.classList.add("navbutton");
-    link.href = host + "/" + item[1]
+    link.href = host + item[1]
     link.innerHTML = item[0];
     link.id = "navbtn" + item[0];
     topbar.appendChild(link);
