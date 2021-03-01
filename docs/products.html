@@ -27,43 +27,53 @@
 <div id="productlist"></div>
 <p style="color:red">Please contact to a Product Manager before purchasing the items marked with a red asterisk (*).</p>
 </div>
-<div id='footer'></div>
 <script src="start.js"></script>
 <script>
 var list = [
     ["001","Import FM Plugin","Free",'This product is free! Click <a class="dotted" target="_blank" href="https://www.roblox.com/library/5765669691">here</a> (opens a new window) for more information and how to get it.'],
-    ["002","LCD Style Stop Reporter Addon","R$250",'Addon for DPIP,adds a LCD Stopreporter'],
-    ["003","ScreenGui Change Dest Addon","R$200",'Addon for Destination Display System,Makes a ScreenGui pops Up for people to choose routes with GUI buttons'],
-    ["004","A-Chassis Mobile Support<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$700",'Description is being added...'],
-    ["005","Random Fleet Number","R$120",'Generates a random fleet number for your bus from a module that contains custom fleet numbers'],
+    ["002","LCD Style Stop Reporter Addon","R$250",'Addon for our DPIP System, as its name, it is an LCD Stopreporter that gives out information along with the DPIP. Note: This is an addon which means that it cannot work on its own.'],
+    ["003","ScreenGui Change Dest Addon","R$200",'Addon for our Destination System, it adds a gui that can be used to control the dest system. Note: This is an addon which means that it cannot work on its own.'],
+    ["004","A-Chassis Mobile Support<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$700",'Mobile Support for A-Chassis. Adds the following buttons : Throttle,Brake,Turn Left and Turn Right. Which are used to control the car. Note: You are recommended to check if this supports the version of A-Chassis that you are using, current supported versions: A-Chassis V6.52S2'],
+    ["005","Random Fleet Number","R$120",'Generates a randomised Fleet Number for your bus/train or whatever model that requires a fleet number/a specific number'],
     ["006","In-game Currency System","R$50",'This item creates a leaderboard. Recommended to purchase for games with in-game currency'],
     ["007","Played Time Leaderboard","R$200","This item helps you to calculate and display a player's overall played time in your game."],
     ["008","Animated Doors","R$250",'This item can give you animated doors instead of the ABCDE method. TweenService is used<br>Note: Remember to anchor the door or it may fall out!<br>Additional installation fee is required for welding to movable objects.'],
     ["009","Wipers<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$200","This is a service that helps your static wipers to be movable!<br>After purchasing, please contact to Product Manager and provide the required models."],
     ["010","Interior Lights System","R$50","This is a small tool that enables players to toggle the lights in specific occasions!"],
     ["011","Destination Display System","R$150","This scripts allows players to control the destination displays at the front, side and back. Currently there are 4 options for you to choose from:<br>1. TextLabel<br>2. Decal<br>3. TextLabel (1 language)<br>4. TextLabel (2 languages)"],
-    ["012","DPIP","R$600","DPIP KMB version with customizable module<br>We recommend you to purchase this with the Destination Display System."],
+    ["012","DPIP","R$600","A DPIP stands for a Dynamic Passenger Information Panel, as its name, it shows passenger information on a screen, while ours is mainly showing the next stop, second next stop and the stop after the second next stop on the screen. While this is made in a Kowloon Motor Bus Style, we support a fully customisable ui, which means you can edit the ui to be anything you want!"],
     ["013","Headlights & Blinkers System","R$50","This is a small tool that enables players to toggle headlights and blinkers."],
-    ["014","Custom Command Teleport Gui <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$300","Adds a custom command that opens up a teleport gui that teleports player in game"],
-    ["015","Custom Loading Screen","R$75","Description is being added..."],
-    ["016","Main Menu GUI","R$75","Description is being added..."],
+    ["014","Custom Command Teleport Gui <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$300","Adds a custom command that opens up a gui which allows you to tp to specific places in game."],
+    ["015","Custom Loading Screen","R$75","Adds a custom loading screen, fully customisable"],
+    ["016","Main Menu GUI","R$75","Adds a main menu, fully customisable, basic version includes: Play button which starts the game<br>You can add other functions by contacting us and we will increase the price accordingly"],
     ["017","Spawn GUI","R$100","This script lets players to spawn in different places in-game.<br>We recommend to purchase this with Main Menu GUI."],
-    ["018","Custom Gauge <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$600","Custom driving gauge for A-Chassis. Fully customizable. Additional features are available with purchase. Contact Product Manager for more info."],
-    ["019","Lights Plan","R$100","Interior Lights, Blinkers, Headlights and Rear Lights"],
-    ["020","GUI Plan","R$250","Custom Loading Screen + Menu Gui + Spawn Gui"],
-    ["021","Basic Bus Scripts Plan","R$350","Lights + Animated Doors"],
-    ["022","Display Plan","R$900","Dest display + DPIP + LCD Stopreporter + customisable module"],
-    ["023","Advanced Bus Equipment Plan","R$1250","Lights + Animated Doors + Dest Display + DPIP + LCD Stopreporter"],
-    ["024","Miscellaneous Pack","R$1420","Animated Doors + Interior Lights + Dest Display + DPIP + Headlights & Blinkers + Custom Command Teleport Gui"],
-    ["025","A-Chassis Keybind System Installing","R$200","Installs item along with keybind(if possible),only needs to pay 200 once,does not apply to plans that includes keybind."],
+    ["018","Custom Gauge <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","R$600","Our custom gauge product is a UI made specifically for A-Chassis. You can add multiple buttons/uis that can connect to various parts/equipments of the bus. We also provide linking service where we can help you connect your desired item to the ui."],
+    ["019","Lights Plan","R$100","Contains Interior Lights, Blinkers, Headlights and Rear Lights"],
+    ["020","GUI Plan","R$250","Contains Custom Loading Screen + Menu Gui + Spawn Gui"],
+    ["021","Basic Bus Scripts Plan","R$350","Contains Lights + Animated Doors + Dest Display + DPIP + LCD Stopreporter"],
+    ["022","Display Plan","R$900","Contains Dest display + DPIP + LCD Stopreporter + customisable module"],
+    ["023","Advanced Bus Equipment Plan","R$1250","Contains Lights + Animated Doors + Dest Display + DPIP + LCD Stopreporter"],
+    ["024","Miscellaneous Pack","R$1420","Contains Animated Doors + Interior Lights + Dest Display + DPIP + Headlights & Blinkers + Custom Command Teleport Gui"],
+    ["025","A-Chassis Keybind System Installing","R$200","Installs item along with keybind(if possible),only needs to pay 200 once,does not apply to plans that includes keybind,see website for more information"],
     ["026","Models and Scripts Installation","20% of required item","Installs the scripts and models to your game.Item refers to the item/plan that requires installing,pay this instead of keybind installing if your plan includes keybind."],
-    ["027","UI Linking Service <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","40% of required item","Description is being added..."],
+    ["027","UI Linking Service<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","40% of required item","We will charge you 40% of the original price to link your product to our custom gauge product. This is counted per product that requires linking. The price may change due to having different UI or functions or any other reasons. All non-OT products will cost you 100 robux.<br>Disclaimer: Our staff may have the final rights of determining an item as 'non-OT product'."],
     ["028","Linking Discord webhook with Roblox game<span style='color:red'>*</span> <i class='material-icons' style='font-size:24px;position:relative;top:2px'>thumb_up</i>","Varies","Send message to Discord using webhook,price determines on what kind of webhook it is,includes intalling,contact product manager before purchasing"],
     ["029","Custom Command<span style='color:red'>*</span>","Varies","Makes custom command(like spawn bus command),price determines on function of the command.<br>Contact Product Manager before purchasing."],
     ["030","Custom Destination Display System<span style='color:red'>*</span>","Varies","This is a upgraded version of the Destination Display product, in which you may use other sources for rendering.<br>Please contact to Product Manager for more information."],
     ["031","Custom Scripts<span style='color:red'>*</span>","Varies","Struggling that non of the above fits you game? Don't worry! We are always here to help you. You can always contact us for more information.<br>Note: Please only ask us for Lua scripts. Don't ask for Python, C+ or anything else."],
 ];
+/*
+Models and Scripts Installation
+Installs the scripts and models to your game.Item refers to the item/plan that requires installing,pay this instead of keybind installing if your plan includes keybind.
 
+UI Linking Service
+COPY AND PASTE FROM GOOGLE SITE
+
+Linking Discord webhook with Roblox game
+Send message to Discord using webhook,price determines on what kind of webhook it is,includes intalling,contact product manager before purchasing
+
+Custom Command
+Makes a custom command for a custom use. Contact a product manager for estimated price.*/
 var frame = document.getElementById("productlist")
 list.forEach(function(value,index){
     var title = document.createElement("div");

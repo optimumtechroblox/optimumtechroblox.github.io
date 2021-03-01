@@ -1,10 +1,13 @@
 // Directed to mobile site
 if (window.innerWidth <= 600){window.location.href = "m" + window.location.pathname}
 // Website icon
-var icon = "Logo.svg"
+var host = window.location.hostname
+if (host = "optimumtechroblox.github.io"){host = "C:/Users/wangh/Documents/GitHub/optimumtechroblox.github.io/docs"}
+var icon = host + "/logo.svg"
 var link = document.createElement("link");link.rel = "shortcut icon";document.head.appendChild(link);link.href = icon;
 var font = document.createElement("link");font.rel = "stylesheet";document.head.appendChild(font);font.href = "https://fonts.googleapis.com/css?family=Rubik";
-var style = document.createElement("link");style.rel = "stylesheet";document.head.appendChild(style);style.href = "style.css";
+var style = document.createElement("link");style.rel = "stylesheet";document.head.appendChild(style);style.href = host + "/style.css";
+var meta = document.createElement("meta");meta.name = "viewport";document.head.appendChild(meta);meta.content = "width=device-width, initial-scale=1.0";
 // Top navbar
 var topbar = document.createElement("div");
 topbar.id = "navbar";
@@ -22,14 +25,22 @@ var navList = [["Home","home.html"],["About Us","about.html"],["Projects","proje
 navList.forEach(function(item){
     var link = document.createElement("a");
     link.classList.add("navbutton");
-    link.href = item[1];
+    link.href = host + "/" + item[1]
     link.innerHTML = item[0];
+    link.id = "navbtn" + item[0];
     topbar.appendChild(link);
     if (link.href === window.location.href){link.classList.add("currentPage")}
     else if (item[0] == "Home" && window.location.pathname == "/"){link.classList.add("currentPage")}
 })
+var itemList = document.createElement("div");
+itemList.id = "productList";
+topbar.appendChild(itemList)
+document.getElementById("navbtnProducts").addEventListener("mouseover",function(){itemList.style.display = "block"})
+document.getElementById("navbtnProducts").addEventListener("mouseout",function(){itemList.style.display = "none"})
+
+
 // Footer
-var footer = document.getElementById("footer");
+var footer = document.createElement("div");document.body.appendChild(footer);footer.id = "footer";
 var img1 = document.createElement("img");img1.id = "footerimg1";
 footer.appendChild(img1);img1.src = "https://www.hkbrda.org/infolink/output/news-big.gif";
 var p1 = document.createElement("p");footer.appendChild(p1);p1.style = "position:absolute;padding:0;left:20px;width:300px"

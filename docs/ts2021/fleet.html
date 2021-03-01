@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Our Fleet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+.dotted{text-decoration:dotted solid black 1px;color:#009ac8}
+.dotted:hover{background-color:#009ac8;color:white}
+#productlist{width:100%}
+.title{width:100%;padding:5px 0px;font-size:22px;cursor:pointer;color:black;transition-duration:400ms;border-radius:10px}
+.title:hover{background-color:#aaa}
+.opentitle{color:white;background-color:#010733;border-radius:0}
+.opentitle:hover{background-color:#009ac8;border-radius:10px}
+
+.desc{background-color:#ddd;display:none;padding:8px}
+.opened{display:block}
+
+@media (max-width:600px){
+    .title{padding:4px 0px;font-size:18px}
+    .desc{background-color:#ddd;font-size:14px}
+}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Our fleet</h1>
+<div id="productlist"></div>
+<p style="color:red">Please contact to a Product Manager before purchasing the items marked with a red asterisk (*).</p>
+</div>
+<script>
+var list = [
+    ["001","Volvo B5LH","Girum Transit bought with double-deck bodyworks numbered as following:<span style='font-family:monospace'>\
+    <br>1-door (11.3m) Wright Eclipse Gemini 1 -- AVBWH 8,12\
+    <br>2-door (11.3m) Wright Eclipse Gemini 1 -- AVBWH 1-7, 9-11, 13-20\
+    <br>2-door (11.3m) MCV EvoSeti -------------- AVBMH 1-40\</span>"],
+    ["002","Volvo B8L","Girum Transit bought with double-deck bodyworks numbered as following:<span style='font-family:monospace'>\
+    <br>Wright Eclipse Gemini 3 (12m) -- AVWBE&nbsp; 1-50\
+    <br>MCV EvoSeti (12m) -------------- AVBME&nbsp; 1-50\
+    <br>MCV EvoSeti (12.8m) ------------ AVBMX&nbsp; 1-50\
+    <br>MCV EvoSeti OD (12.8m) --------- AVBMX 56-60\
+    <br>MCV EvoSeti Airport (12.8m) ---- AVBMX 61-70\
+    <br><br>Thanks For Sharing Transit bought with double-deck bodyworks in length 12m numbered as following:<span style='font-family:monospace'>\
+    <br>Wright Eclipse Gemini 3 (12m) -- VB8L 1-50\
+    <br>MCV EvoSeti (12m) --------------- V8E 1-25\
+    <br>MCV EvoSeti (12.8m) ------------ 3V8E 1-20</span>"],
+    ["003","Volvo B9TL","Girum Transit bought with Wright Eclipse Gemini 1 double-deck bodyworks in length 12m numbered as AVWL 1-40\
+    <br><br>Thanks For Sharing Transit bought with Wright Eclipse Gemini 2 double-deck bodyworks in length 12m numbered as AVBWR 1-40"],
+    ["004","Volvo B10T (Olympian)","Girum Transit bought with Alxander R Series double-deck bodyworks numbered as following:\
+    <br><span style='font-family:monospace'>2-axle (10.3m) w/ AC -- AV2O 1-20<br>3-axle &nbsp; (12m) w/ AC --- AVO 1-30\
+    <br>2-axle (10.3m) no AC ---- VO 1-10<br>3-axle &nbsp; (12m) no AC --- V2O 1-30</span>\
+    <br><br>Thanks For Sharing Transit bought with Alexander R Series double-deck bodyworks in length 12m numbered as ACVO 1-2"],
+    ["005","Volvo B10TL (Super Olympian)","Girum Transit bought with Wright Explorer double-deck bodyworks in length 12m numbered as AVSOW 1-50\
+    <br><br>Thanks For Sharing Transit bought with Wright Explorer double-deck bodyworks in length 12m numbered as VWEG 1-30\
+    <br><br>Roblox MRT Corporation bought with Wright Explorer double-deck bodyworks in length 12m numbered as 2000-2049"],
+    ["006","Alexander Dennis Custom-made vehicle",'Thanks For Sharing Transit bought with custom single-deck bodyworks in length 12m numbered as AD 1-2'],
+];
+var frame = document.getElementById("productlist")
+list.forEach(function(value,index){
+    var title = document.createElement("div");
+    title.id = "item" + index;
+    title.classList.add("title");
+    title.innerHTML = '&nbsp;<i id="item' + value[0] + 'icon" class="material-icons" style="font-size:25px;position:relative;top:5px">expand_more</i>&nbsp;' + value[1];
+    frame.appendChild(title);
+    var desc = document.createElement("div");
+    desc.id = "desc" + index;
+    desc.classList.add("desc");
+    desc.innerHTML = "Purchases:<br><br>" + value[2];
+    frame.appendChild(desc);
+    title.addEventListener("click",function(){
+        var icon = document.getElementById("item"+ value[0] +"icon");
+        if (desc.classList.contains("opened")){
+            title.classList.remove("opentitle");
+            desc.classList.remove("opened");
+            icon.innerHTML = "expand_more";}
+        else {
+            title.classList.add("opentitle");
+            desc.classList.add("opened");
+            icon.innerHTML = "expand_less";}
+    });
+})
+</script>
+<div id="content">
+</div>
+<script src="../start.js"></script>
+</body>
+</html>
