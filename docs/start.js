@@ -1,5 +1,3 @@
-// Directed to mobile site
-if (window.innerWidth <= 600){window.location.href = "m" + window.location.pathname}
 // Website icon
 var host = "https://optimumtechroblox.github.io/"
 var icon = host + "logo.svg"
@@ -13,12 +11,12 @@ topbar.id = "navbar";
 document.body.appendChild(topbar);
 var link1 = document.createElement("a");
 link1.classList = "navbutton";
-link1.href = "index.html";
+link1.href = host;
 var link1img = document.createElement("img");
 link1img.id = "navicon";
 link1img.src = icon;
 link1.appendChild(link1img);
-link1.style = "width:60px;height:50px;padding:0";
+link1.style = "width:60px;height:50px;padding:0;float:left";
 topbar.appendChild(link1);
 var navList = [["Home","","left"],["About Us","about.html","left"],["Products","products.html","left"],["Contact us","contact.html","right"]];
 navList.forEach(function(item){
