@@ -1,6 +1,6 @@
 // Website icon
 var host = window.location.hostname
-if (host == undefined){host = "file:///C:/Users/wangh/Documents/GitHub/optimumtechroblox.github.io/docs/"}
+if (window.location.protocol == "file:"){host = "file:///C:/Users/wangh/Documents/GitHub/optimumtechroblox.github.io/docs/"}
 var icon = host + "logo.svg"
 var link = document.createElement("link");link.rel = "shortcut icon";document.head.appendChild(link);link.href = icon;
 var font = document.createElement("link");font.rel = "stylesheet";document.head.appendChild(font);font.href = "https://fonts.googleapis.com/css?family=Rubik";
