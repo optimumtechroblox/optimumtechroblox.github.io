@@ -1,6 +1,6 @@
 // Website icon
 var host = window.location.hostname
-if (host.lastIndexOf("/") != host.length - 1){host = host + "/"}
+if (host.lastIndexOf("/") != host.length - 1){host = "https://" + host + "/"}
 if (window.location.protocol == "file:"){host = "file:///C:/Users/wangh/Documents/GitHub/optimumtechroblox.github.io/docs/"}
 var icon = host + "logo.svg"
 var link = document.createElement("link");link.rel = "shortcut icon";document.head.appendChild(link);link.href = icon;
